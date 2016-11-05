@@ -1,5 +1,9 @@
 = Angular CLI Docker Container. Based on Alpine
 
+=== Alpine version
+
+`3.3`
+
 === Node version
 
 `4.3.0`
