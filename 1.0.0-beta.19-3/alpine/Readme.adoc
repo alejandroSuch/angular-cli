@@ -1,0 +1,13 @@
+= Angular CLI Docker Container. Based on Alpine
+
+=== Node version
+
+`4.3.0`
+
+=== Npm version
+
+`3.10.9`
+
+=== Angular CLI version
+
+`1.0.0-beta.19-3`
