@@ -8,5 +8,5 @@ RUN apk update \
     && npm install -g npm@3.10.9 \
     && npm install angular-cli@1.0.0-beta.19-3 \
     && export PATH=$PATH:/node_modules/.bin \
-    && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm
+    && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
     && npm cache clear
