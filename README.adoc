@@ -2,3 +2,5 @@
 
 * https://github.com/alejandroSuch/angular-cli/blob/master/1.0.0-beta.19-3/ubuntu[1.0.0-beta.19-3-ubuntu]
 // * https://github.com/alejandroSuch/angular-cli/tree/master/1.0.0-beta.19-3/alpine[1.0.0-beta.19-3-alpine]
+
+https://hub.docker.com/r/alexsuch/angular-cli/[View on Docker Hub]
