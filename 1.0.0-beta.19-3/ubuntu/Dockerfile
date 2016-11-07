@@ -11,6 +11,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && npm cache clear
 
-PORT 4200
+EXPOSE 4200
 
 CMD ["/bin/bash", "ng", "serve"]
