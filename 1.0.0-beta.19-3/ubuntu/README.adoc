@@ -1,0 +1,17 @@
+= Angular CLI Docker Container. Based on Ubuntu
+
+=== Ubuntu version
+
+`16.10`
+
+=== Node version
+
+`6.9.1`
+
+=== Npm version
+
+`3.10.8`
+
+=== Angular CLI version
+
+`1.0.0-beta.19-3`
