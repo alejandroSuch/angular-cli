@@ -10,7 +10,4 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && npm cache clear
-
-EXPOSE 4200
-
-CMD ["/bin/bash", "ng", "serve"]
+    
