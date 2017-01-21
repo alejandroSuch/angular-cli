@@ -1,7 +1,6 @@
 FROM ubuntu:16.10
 
-MAINTAINER Alejandro Such <alejandro.such@gmail.com>
-MAINTAINER Mihai Bob
+LABEL authors="Alejandro Such, Mihai Bob"
 
 RUN apt-get update \
     && apt-get install -y curl build-essential python \
