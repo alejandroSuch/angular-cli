@@ -7,3 +7,23 @@
 angular-cli: 1.0.0-beta.28.3
 node: 6.9.5
 os: linux x64
+
+Usage examples
+==============
+
+This image has the same usage as https://cli.angular.io/[Angular CLI]
+
+Creating a project
+==================
+
+`docker run -it --rm -w /opt -v $(pwd):/opt alexsuch/angular-cli:1.0.0-beta.22-ubuntu ng new my-project-name`
+
+Generating a component
+======================
+
+`docker run -it --rm -w /opt -v $(pwd):/opt alexsuch/angular-cli:1.0.0-beta.22-ubuntu ng g component sample-component`
+
+Serving
+=======
+
+`docker run -it --rm -w /opt -v $(pwd):/opt -p 4200:4200 alexsuch/angular-cli:1.0.0-beta.22-ubuntu ng serve --host 0.0.0.0`
