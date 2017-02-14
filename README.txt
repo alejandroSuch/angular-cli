@@ -12,7 +12,7 @@ docker hub: https://hub.docker.com/r/alexsuch/angular-cli/
 Usage examples
 ==============
 
-This image has the same usage as https://cli.angular.io/[Angular CLI]
+This image has the same usage as Angular CLI (https://cli.angular.io/)
 
 Creating a project
 ==================
