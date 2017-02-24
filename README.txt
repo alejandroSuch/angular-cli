@@ -4,9 +4,10 @@
 | (_| || | | || (_| || |_| || || (_| || |  |_____|| (__ | || |
  \__,_||_| |_| \__, | \__,_||_| \__,_||_|          \___||_||_|
                |___/
-angular-cli: 1.0.0-beta.32.3
-node: 6.9.5
+@angular/cli: 1.0.0-beta.32.3
+node: 6.10.0
 os: linux x64
+package manager: yarn
 docker hub: https://hub.docker.com/r/alexsuch/angular-cli/
 
 Usage examples
