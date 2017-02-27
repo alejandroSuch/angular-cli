@@ -4,7 +4,7 @@ LABEL author="Alejandro Such <alejandro.such@gmail.com>"
 
 RUN apk update \
   && apk add --update alpine-sdk \
-  && npm install -g @angular/cli@1.0.0-beta.32.3 \
+  && npm install -g @angular/cli@1.0.0-rc.0 \
   && npm install -g yarn \
   && ng set --global packageManager=yarn \
   && apk del alpine-sdk \
