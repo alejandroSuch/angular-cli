@@ -1,6 +1,6 @@
 FROM node:6-alpine
 
-LABEL author="Alejandro Such <alejandro.such@gmail.com>"
+LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bob@gmail.com>"
 
 RUN apk update \
   && apk add --update alpine-sdk \
