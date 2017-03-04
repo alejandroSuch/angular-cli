@@ -6,6 +6,8 @@
                |___/
 @angular/cli: 1.0.0-rc.1
 node: 6.10.0
+npm: 3.1.10
+yarn: 0.21.3
 os: linux x64
 package manager: yarn
 docker hub: https://hub.docker.com/r/alexsuch/angular-cli/
