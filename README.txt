@@ -4,10 +4,10 @@
  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
 /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                |___/
-@angular/cli: 1.0.0
-node: 6.10.1
+@angular/cli: 1.1.0-rc.2
+node: 6.10.2
 npm: 3.10.10
-yarn: 0.21.3
+yarn: 0.23.2
 os: linux x64
 package manager: yarn
 docker hub: https://hub.docker.com/r/alexsuch/angular-cli/
