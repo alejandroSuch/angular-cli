@@ -31,3 +31,14 @@ Serving
 =======
 
 `docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli ng serve --host 0.0.0.0`
+
+Credits
+=======
+
+Made with ❤️ by Alejandro Such (twitter.com/alejandro_such) and all these wonderful contributors:
+
+ - Mihai Bob (https://github.com/Mihai-B)
+ - Daniel Schreiber (https://github.com/daniel-sc)
+ - nlko (https://github.com/nlko)
+ - Michaël van de Giessen (https://github.com/tubbynl)
+ 
