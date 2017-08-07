@@ -35,7 +35,7 @@ Serving
 Credits
 =======
 
-Made with ❤️ by Alejandro Such (twitter.com/alejandro_such) and all these wonderful contributors:
+Made with ❤️ by Alejandro Such (https://twitter.com/alejandro_such) and all these wonderful contributors:
 
  - Mihai Bob (https://github.com/Mihai-B)
  - Daniel Schreiber (https://github.com/daniel-sc)
