@@ -1,0 +1,56 @@
+#!/bin/bash
+
+replace_files_with() {
+  sed -i -E "s:\(@angular/cli@\).*\(\s*\\\\\):\1$1 \2:" Dockerfile
+  sed -i -E "s/\(@angular\/cli:\).*/\1 $1/" README.txt
+}
+
+build_docker() {
+  docker build -t alexsuch/angular-cli:$1 .
+  return $?
+}
+
+on_success() {
+  local VERSION=$1
+  local DEFAULT_MSG="Update CLI version to $1"
+
+  clear
+  echo "Success!"
+  echo "Sending changes to github"
+  echo "Default message will be '$DEFAULT_MSG'"
+  read -p "Write your message (Hit ENTER for default message): " COMMIT_MSG
+
+  if [[ -z "$COMMIT_MSG" ]]; then
+    COMMIT_MSG=$DEFAULT_MSG
+  fi
+
+  git add Dockerfile README.txt
+  git commit -m "$COMMIT_MSG"
+  git tag -a $VERSION -m "version $VERSION"
+  git push origin master
+  git push origin $VERSION
+}
+
+on_error() {
+  clear
+  echo "Docker build failed!"
+}
+
+if [ $# -eq 0 ]
+  then
+    echo "Version is required"
+    exit 1;
+fi
+
+VERSION=$1
+replace_files_with $VERSION
+build_docker $VERSION
+DOCKER_BUILD_RESULT=$?
+
+if [ $DOCKER_BUILD_RESULT -eq 0 ]; then
+  on_success $VERSION
+else
+  on_error
+fi
+
+
