@@ -24,11 +24,25 @@ on_success() {
     COMMIT_MSG=$DEFAULT_MSG
   fi
 
+  echo "Committing files"
   git add Dockerfile README.txt
   git commit -m "$COMMIT_MSG"
   git tag -a $VERSION -m "version $VERSION"
+
+  echo "Pushing to Github"
   git push origin master
   git push origin $VERSION
+
+  echo "Generating release $VERSION"
+  curl --data "{\"tag_name\": \"$VERSION\",
+              \"target_commitish\": \"master\",
+              \"name\": \"v$VERSION\",
+              \"body\": \"Release of version $VERSION\",
+              \"draft\": false,
+              \"prerelease\": false}" \
+  https://api.github.com/repos/alejandroSuch/angular-cli/releases?access_token=$GITHUB_ACCESS_TOKEN
+
+  echo "Success!"
 }
 
 on_error() {
