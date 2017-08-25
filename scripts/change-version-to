@@ -3,7 +3,7 @@
 switch_to_branch() {
   local BRANCH=$1
 
-  git checkout -b $BRANCH
+  git checkout $BRANCH
   git pull origin $BRANCH
 }
 
