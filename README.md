@@ -1,3 +1,3 @@
 # Angular CLI
 
-Base image for images that will use headless Chromium (`1.x.x-chromium` branches)
+Base image for images that will use headless Chromium (`x.y.z-chromium` branches)
