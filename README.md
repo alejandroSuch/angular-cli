@@ -10,7 +10,7 @@
 **@angular/cli:** 1.3.2<br/>
 **node:** 6.11.2<br/>
 **npm:** 3.10.10<br/>
-**yarn:** 0.24.6<br/>
+**yarn:** 0.27.5<br/>
 **os:** linux x64<br/>
 **package manager:** yarn<br/>
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
