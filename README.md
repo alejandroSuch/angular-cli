@@ -15,6 +15,8 @@
 **package manager:** yarn<br/>
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/alexsuch/angular-cli.svg)](https://hub.docker.com/r/alexsuch/angular-cli/)
+
 ## Usage examples
 
 This image has the same usage as Angular CLI (https://cli.angular.io/)
