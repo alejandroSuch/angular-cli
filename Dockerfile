@@ -1,4 +1,4 @@
-FROM node:6.11.2-alpine
+FROM alexsuch/angular-cli:base
 
 LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bob@gmail.com>"
 

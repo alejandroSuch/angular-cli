@@ -16,13 +16,24 @@ replace_files_with() {
 }
 
 build_docker() {
-  docker build -t alexsuch/angular-cli:$1 .
+  local SUFFIX=""
+
+  if [ ! -z "$2" ]; then
+      SUFFIX="-$2"
+  fi
+
+  docker build -t alexsuch/angular-cli:$1$SUFFIX .
   return $?
 }
 
 on_success() {
   local VERSION=$1
   local DEFAULT_MSG="Update CLI version to $1"
+  local SUFFIX=""
+
+  if [ ! -z "$2" ]; then
+      SUFFIX="-$2"
+  fi
 
   clear
   echo "Success!"
@@ -37,17 +48,17 @@ on_success() {
   echo "Committing files"
   git add Dockerfile README.md
   git commit -m "$COMMIT_MSG"
-  git tag -a $VERSION -m "version $VERSION"
+  git tag -a $VERSION$SUFFIX -m "version $VERSION$SUFFIX"
 
   echo "Pushing to Github"
   git push origin master
-  git push origin $VERSION
+  git push origin $VERSION$SUFFIX
 
-  echo "Generating release $VERSION"
-  curl --data "{\"tag_name\": \"$VERSION\",
+  echo "Generating release $VERSION$SUFFIX"
+  curl --data "{\"tag_name\": \"$VERSION$SUFFIX\",
               \"target_commitish\": \"master\",
-              \"name\": \"v$VERSION\",
-              \"body\": \"Release of version $VERSION\",
+              \"name\": \"v$VERSION$SUFFIX\",
+              \"body\": \"Release of version $VERSION$SUFFIX\",
               \"draft\": false,
               \"prerelease\": false}" \
   https://api.github.com/repos/alejandroSuch/angular-cli/releases?access_token=$GITHUB_ACCESS_TOKEN
@@ -58,15 +69,17 @@ on_success() {
 on_error() {
   clear
   echo "Docker build failed!"
+  exit 1
 }
 
-if [ $# -eq 0 ]
-  then
+if [ $# -eq 0 ]; then
     echo "Version is required"
-    exit 1;
+    exit 1
 fi
 
 VERSION=$1
+
+# STANDARD VERSIONS
 
 if [[ $VERSION == 1.3.* ]]; then
   switch_to_branch "1.3.x"
@@ -78,10 +91,26 @@ replace_files_with $VERSION
 build_docker $VERSION
 DOCKER_BUILD_RESULT=$?
 
-if [ $DOCKER_BUILD_RESULT -eq 0 ]; then
-  on_success $VERSION
-else
+if [ $DOCKER_BUILD_RESULT -ne 0 ]; then
   on_error
 fi
+
+# CHROMIUM VERSIONS
+
+if [[ $VERSION == 1.3.* ]]; then
+  switch_to_branch "1.3.x-chromium"
+elif [[ $VERSION == 1.4.* ]]; then
+  switch_to_branch "1.4.x-chromium"
+fi
+
+replace_files_with $VERSION
+build_docker $VERSION "chromium"
+DOCKER_BUILD_RESULT=$?
+
+if [ $DOCKER_BUILD_RESULT -ne 0 ]; then
+  on_error
+fi
+
+on_success $VERSION "chromium"
 
 switch_to_branch "master"
