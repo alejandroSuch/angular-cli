@@ -83,7 +83,7 @@ VERSION=$1
 
 if [[ $VERSION == 1.3.* ]]; then
   switch_to_branch "1.3.x"
-else 
+elif [[ $VERSION == 1.4.* ]]; then
   switch_to_branch "master"
 fi
 
