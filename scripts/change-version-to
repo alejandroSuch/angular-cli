@@ -54,7 +54,7 @@ on_success() {
 
   echo "Pushing to Github"
   git push origin master
-  git push origin $VERSION
+  git push origin $VERSION$SUFFIX
 
   echo "Generating release $VERSION$SUFFIX"
   curl --data "{\"tag_name\": \"$VERSION$SUFFIX\",
