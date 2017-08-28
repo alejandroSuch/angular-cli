@@ -9,10 +9,15 @@ switch_to_branch() {
 
 replace_files_with() {
   local VERSION=$1
+  local SUFFIX=""
+  
+  if [ ! -z "$2" ]; then
+    SUFFIX=$2
+  fi
   
   sed -i -E "s:\(@angular/cli@\).*\(\s*\\\\\):\1$VERSION \2:" Dockerfile
   sed -i -E "s/\(@angular\/cli:\*\*\).*\(<br\/>\)/\1 $VERSION\2/" README.md
-  sed -i -E "s/\(alexsuch\/angular-cli:\).*\(ng\)/\1$VERSION \2/" README.md
+  sed -i -E "s/\(alexsuch\/angular-cli:\).*\(ng\)/\1$VERSION$SUFFIX \2/" README.md
 }
 
 build_docker() {
@@ -107,7 +112,7 @@ elif [[ $VERSION == 1.4.* ]]; then
   switch_to_branch "1.4.x-chromium"
 fi
 
-replace_files_with $VERSION
+replace_files_with $VERSION "-chromium"
 build_docker $VERSION "-chromium"
 DOCKER_BUILD_RESULT=$?
 
