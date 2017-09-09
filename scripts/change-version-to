@@ -58,7 +58,6 @@ on_success() {
   git tag -a $VERSION$SUFFIX -m "version $VERSION$SUFFIX"
 
   echo "Pushing to Github"
-  git push origin master
   git push origin $VERSION$SUFFIX
 
   echo "Generating release $VERSION$SUFFIX"
