@@ -94,6 +94,8 @@ elif [[ $VERSION == 1.4.* ]]; then
   BRANCHNAME="1.4.x"
 elif [[ $VERSION == 1.5.* ]]; then
   BRANCHNAME="master"
+elif [[ $VERSION == 1.6.* ]]; then
+  BRANCHNAME="1.6.x"
 fi
 
 switch_to_branch $BRANCHNAME
@@ -115,6 +117,8 @@ elif [[ $VERSION == 1.4.* ]]; then
   BRANCHNAME="1.4.x-chromium"
 elif [[ $VERSION == 1.5.* ]]; then
   BRANCHNAME="1.5.x-chromium"
+elif [[ $VERSION == 1.6.* ]]; then
+  BRANCHNAME="1.6.x-chromium"
 fi
 
 switch_to_branch $BRANCHNAME
