@@ -34,10 +34,11 @@ build_docker() {
 
 on_success() {
   local VERSION=$1
+  local BRANCHNAME=$2
   local SUFFIX=""
   
-  if [ ! -z "$2" ]; then
-    SUFFIX=$2
+  if [ ! -z "$3" ]; then
+    SUFFIX=$3
   fi
 
   local DEFAULT_MSG="Update CLI version to $VERSION$SUFFIX"
@@ -58,11 +59,11 @@ on_success() {
   git tag -a $VERSION$SUFFIX -m "version $VERSION$SUFFIX"
 
   echo "Pushing to Github"
-  git push origin $VERSION$SUFFIX
+  git push origin $BRANCHNAME
 
   echo "Generating release $VERSION$SUFFIX"
   curl --data "{\"tag_name\": \"$VERSION$SUFFIX\",
-              \"target_commitish\": \"master\",
+              \"target_commitish\": \"$BRANCHNAME\",
               \"name\": \"v$VERSION$SUFFIX\",
               \"body\": \"Release of version $VERSION$SUFFIX\",
               \"draft\": false,
@@ -84,23 +85,24 @@ if [ $# -eq 0 ]; then
 fi
 
 VERSION=$1
-
+BRANCHNAME=""
 ## STANDARD VERSION
 
 if [[ $VERSION == 1.3.* ]]; then
-  switch_to_branch "1.3.x"
+  BRANCHNAME="1.3.x"
 elif [[ $VERSION == 1.4.* ]]; then
-  switch_to_branch "1.4.x"
+  BRANCHNAME="1.4.x"
 elif [[ $VERSION == 1.5.* ]]; then
-  switch_to_branch "master"
+  BRANCHNAME="master"
 fi
 
+switch_to_branch $BRANCHNAME
 replace_files_with $VERSION
 build_docker $VERSION
 DOCKER_BUILD_RESULT=$?
 
 if [ $DOCKER_BUILD_RESULT -eq 0 ]; then
-  on_success $VERSION
+  on_success $VERSION $BRANCHNAME
 else
   on_error
 fi
@@ -108,19 +110,20 @@ fi
 ## CHROMIUM VERSION
 
 if [[ $VERSION == 1.3.* ]]; then
-  switch_to_branch "1.3.x-chromium"
+  BRANCHNAME="1.3.x-chromium"
 elif [[ $VERSION == 1.4.* ]]; then
-  switch_to_branch "1.4.x-chromium"
+  BRANCHNAME="1.4.x-chromium"
 elif [[ $VERSION == 1.5.* ]]; then
-  switch_to_branch "1.5.x-chromium"
+  BRANCHNAME="1.5.x-chromium"
 fi
 
+switch_to_branch $BRANCHNAME
 replace_files_with $VERSION "-chromium"
 build_docker $VERSION "-chromium"
 DOCKER_BUILD_RESULT=$?
 
 if [ $DOCKER_BUILD_RESULT -eq 0 ]; then
-  on_success $VERSION "-chromium"
+  on_success $VERSION $BRANCHNAME "-chromium"
 else
   on_error
 fi
