@@ -4,7 +4,7 @@ LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bo
 
 RUN apk update \
   && yarn global add @angular/cli@6.0.0-beta.2 \
-  && ng set --global packageManager=yarn \
+#  && ng set --global packageManager=yarn \
   && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
   && npm cache clear --force \
   && yarn cache clean \
