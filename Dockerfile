@@ -4,7 +4,7 @@ LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bo
 
 RUN apk update \
   && apk add --update alpine-sdk python git \
-  && yarn global add @angular/cli@6.0.1 \
+  && npm install -g @angular/cli@6.0.1 \
   && apk del alpine-sdk python \
   && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
   && npm cache clean --force \
