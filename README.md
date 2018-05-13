@@ -9,7 +9,7 @@
 
 **@angular/cli:** 6.0.1  
 **node:** Carbon (8.x LTS)  
-**os:** linux x64  
+**os:** linux x64   
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
 
 ## Usage examples
