@@ -9,7 +9,8 @@
 
 **@angular/cli:** 6.0.1  
 **node:** Carbon (8.x LTS)  
-**os:** linux x64  
+**package manager:** npm   
+**os:** linux x64   
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/alexsuch/angular-cli.svg)](https://hub.docker.com/r/alexsuch/angular-cli/)
