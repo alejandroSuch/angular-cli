@@ -7,10 +7,10 @@
                |___/
 ```
 
-**@angular/cli:** 6.0.1  
-**node:** Carbon (8.x LTS)  
-**package manager:** npm   
-**os:** linux x64   
+**@angular/cli:** 6.0.3
+**node:** Carbon (8.x LTS)
+**package manager:** npm
+**os:** linux x64
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/alexsuch/angular-cli.svg)](https://hub.docker.com/r/alexsuch/angular-cli/)
@@ -22,19 +22,19 @@ This image has the same usage as Angular CLI (https://cli.angular.io/)
 ### Creating a project
 
 ```
-docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:6.0.1 ng new my-project-name
+docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:6.0.3 ng new my-project-name
 ```
 
 ### Generating a component
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:6.0.1 ng g component sample-component
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:6.0.3 ng g component sample-component
 ```
 
 ### Serving
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:6.0.1 ng serve --host 0.0.0.0
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:6.0.3 ng serve --host 0.0.0.0
 ```
 
 ## Credits
