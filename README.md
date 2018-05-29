@@ -22,19 +22,19 @@ This image has the same usage as Angular CLI (https://cli.angular.io/)
 ### Creating a project
 
 ```
-docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:6.0.3 ng new my-project-name
+docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:6.0.5 ng new my-project-name
 ```
 
 ### Generating a component
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:6.0.3 ng g component sample-component
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:6.0.5 ng g component sample-component
 ```
 
 ### Serving
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:6.0.3 ng serve --host 0.0.0.0
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:6.0.5 ng serve --host 0.0.0.0
 ```
 
 ## Credits
