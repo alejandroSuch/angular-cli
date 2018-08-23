@@ -3,7 +3,7 @@ FROM node:9.2.0-alpine
 LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bob@gmail.com>"
 
 RUN apk update \
-  && apk add --update alpine-sdk python \
+  && apk add --update alpine-sdk python procps \
   && yarn global add @angular/cli@1.5.5 \
   && ng set --global packageManager=yarn \
   && apk del alpine-sdk python \
