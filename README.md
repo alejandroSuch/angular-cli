@@ -7,7 +7,7 @@
                |___/
 ```
 
-**@angular/cli:** 6.1.3
+**@angular/cli:** 7.0.3
 **node:** Carbon (8.x LTS)
 **package manager:** npm
 **os:** linux x64
