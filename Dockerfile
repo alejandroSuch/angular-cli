@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:11
 
 LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bob@gmail.com>"
 
