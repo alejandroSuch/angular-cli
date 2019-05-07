@@ -10,11 +10,11 @@ switch_to_branch() {
 replace_files_with() {
   local VERSION=$1
   local SUFFIX=""
-  
+
   if [ ! -z "$2" ]; then
     SUFFIX=$2
   fi
-  
+
   sed -i -E "s:\(@angular/cli@\).*\(\s*\\\\\):\1$VERSION \2:" Dockerfile
   sed -i -E "s/\(@angular\/cli:\*\*\).*\(<br\/>\)/\1 $VERSION\2/" README.md
   sed -i -E "s/\(alexsuch\/angular-cli:\).*\(ng\)/\1$VERSION$SUFFIX \2/" README.md
@@ -23,7 +23,7 @@ replace_files_with() {
 build_docker() {
   local VERSION=$1
   local SUFFIX=""
-  
+
   if [ ! -z "$2" ]; then
     SUFFIX=$2
   fi
@@ -36,7 +36,7 @@ on_success() {
   local VERSION=$1
   local BRANCHNAME=$2
   local SUFFIX=""
-  
+
   if [ ! -z "$3" ]; then
     SUFFIX=$3
   fi
@@ -106,6 +106,8 @@ elif [[ $VERSION == 6.2.* ]]; then
   BRANCHNAME="6.2.x"
 elif [[ $VERSION == 7.0.* ]]; then
   BRANCHNAME="7.0.x"
+elif [[ $VERSION == 7.3.* ]]; then
+  BRANCHNAME="7.3.x"
 fi
 
 switch_to_branch $BRANCHNAME
@@ -139,6 +141,8 @@ elif [[ $VERSION == 6.2.* ]]; then
   BRANCHNAME="6.2.x-chromium"
 elif [[ $VERSION == 7.0.* ]]; then
   BRANCHNAME="7.0.x-chromium"
+elif [[ $VERSION == 7.3.* ]]; then
+  BRANCHNAME="7.3.x-chromium"
 fi
 
 switch_to_branch $BRANCHNAME
