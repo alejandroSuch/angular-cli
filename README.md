@@ -8,9 +8,9 @@
 ```
 
 **@angular/cli:** 1.5.5<br/>
-**node:** 6.11.2<br/>
-**npm:** 3.10.10<br/>
-**yarn:** 0.24.6<br/>
+**node:** 14.18.0<br/>
+**npm:** 6.14.15<br/>
+**yarn:** 1.22.5<br/>
 **os:** linux x64<br/>
 **package manager:** yarn<br/>
 **docker hub:** https://hub.docker.com/r/alexsuch/angular-cli/
@@ -24,19 +24,19 @@ This image has the same usage as Angular CLI (https://cli.angular.io/)
 ### Creating a project
 
 ```
-docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:1.5.5 ng new my-project-name
+docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:10.2.3 ng new my-project-name
 ```
 
 ### Generating a component
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:1.5.5 ng g component sample-component
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:10.2.3 ng g component sample-component
 ```
 
 ### Serving
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:1.5.5 ng serve --host 0.0.0.0
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:10.2.3 ng serve --host 0.0.0.0
 ```
 
 ## Credits
@@ -49,6 +49,7 @@ This Docker image has been made with ❤️ by [Alejandro Such ](https://twitter
  - [Daniel Schreiber](https://github.com/daniel-sc)
  - [nlko](https://github.com/nlko)
  - [Michaël van de Giessen](https://github.com/tubbynl)
+ - [Dinei A. Rockenbach](https://github.com/dineiar)
 
 ## License
 
