@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Dockerfile",
+            "type": "shell",
+            "command": "docker build --build-arg ANGULAR_CLI_VERSION=${input:cliversion} -t alexsuch/angular-cli:${input:cliversion} .",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Test angular-cli version",
+            "type": "shell",
+            "command": "docker run -it --rm alexsuch/angular-cli:${input:cliversion} ng --version",
+            "problemMatcher": []
+        }
+    ],
+    // https://code.visualstudio.com/docs/editor/variables-reference#_input-variables
+    "inputs": [
+        {
+            "id": "cliversion",
+            "type": "promptString",
+            "description": "Angular CLI version of the Docker image",
+            "default": "latest"
+        }
+    ]
+}
