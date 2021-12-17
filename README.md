@@ -7,7 +7,7 @@
                |___/
 ```
 
-**@angular/cli:** 11.2.16<br/>
+**@angular/cli:** 11.2.17<br/>
 **node:** 14.18.0<br/>
 **npm:** 6.14.15<br/>
 **yarn:** 1.22.5<br/>
@@ -25,19 +25,19 @@ This image has the same usage as Angular CLI (https://cli.angular.io/)
 ### Creating a project
 
 ```
-docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:11.2.16 ng new my-project-name
+docker run -it --rm -w /app -v $(pwd):/app alexsuch/angular-cli:11.2.17 ng new my-project-name
 ```
 
 ### Generating a component
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:11.2.16 ng g component sample-component
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app alexsuch/angular-cli:11.2.17 ng g component sample-component
 ```
 
 ### Serving
 
 ```
-docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:11.2.16 ng serve --host 0.0.0.0
+docker run -it --rm -w /app -v $(pwd)/my-project-name:/app -p 4200:4200 alexsuch/angular-cli:11.2.17 ng serve --host 0.0.0.0
 ```
 
 ## Credits
