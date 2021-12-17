@@ -17,6 +17,12 @@
             "type": "shell",
             "command": "docker run -it --rm alexsuch/angular-cli:${input:cliversion} ng --version",
             "problemMatcher": []
+        },
+        {
+            "label": "Push angular-cli image",
+            "type": "shell",
+            "command": "docker push alexsuch/angular-cli:${input:cliversion}",
+            "problemMatcher": []
         }
     ],
     // https://code.visualstudio.com/docs/editor/variables-reference#_input-variables
