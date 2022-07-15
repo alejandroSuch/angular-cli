@@ -15,7 +15,8 @@
         {
             "label": "Test angular-cli version",
             "type": "shell",
-            "command": "docker run -it --rm alexsuch/angular-cli:${input:cliversion} ng --version",
+            // ng v14+ changed from ng --version to ng version
+            "command": "docker run -it --rm alexsuch/angular-cli:${input:cliversion} ng version",
             "problemMatcher": []
         },
         {
