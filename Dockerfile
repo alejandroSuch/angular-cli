@@ -1,4 +1,4 @@
-FROM node:14.18.0-alpine
+FROM node:18.18.0-alpine
 
 LABEL authors="Alejandro Such <alejandro.such@gmail.com> , Mihai Bob <mihai.m.bob@gmail.com>, Dinei A. Rockenbach <dineiar@gmail.com>"
 
